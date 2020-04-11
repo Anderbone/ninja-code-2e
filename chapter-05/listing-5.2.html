@@ -2,30 +2,30 @@
 <html>
 
 <head>
-  <title>A not so simple closure</title>
-  <meta charset="utf-8">
-  <script src="../assert.js"></script>
-  <link rel="stylesheet" type="text/css" href="../assert.css">
+    <title>A not so simple closure</title>
+    <meta charset="utf-8">
+    <script src="../assert.js"></script>
+    <link rel="stylesheet" type="text/css" href="../assert.css">
 </head>
 
 <body>
-	<script>
-	  var outerValue = "samurai";
+<script>
+    var outerValue = "samurai";
     var later;
 
     function outerFunction() {
-      var innerValue = "ninja";
+        var innerValue = "ninja";
 
-      function innerFunction() {
-        assert(outerValue === "samurai", "I can see the samurai.");
-        assert(innerValue === "ninja", "I can see the ninja.");
-      }
+        function innerFunction() {
+            assert(outerValue === "samurai", "I can see the samurai.");
+            assert(innerValue === "ninja", "I can see the ninja.");
+        }
 
-      later = innerFunction;
+        later = innerFunction;
     }
 
     outerFunction();
-    later();
-	</script>
+    later();// useless? useful! closures
+</script>
 </body>
 </html>
